@@ -143,3 +143,138 @@ print(age)
 pi = input("What's the value of pi?")
 pi = float(pi)
 print(pi)
+
+"""
+While 循环
+"""
+# 简单的while循环
+current_value = 1
+while current_value <= 5:
+    print(current_value)
+    current_value += 1
+
+# 让用户选择何时退出
+msg = ''
+while msg != 'quit':
+    msg = input("What's your message?")
+    print(msg)
+
+
+"""
+函数
+"""
+
+# 一个简单的函数
+
+
+def greet_user():
+    """Display a simple greeting."""
+    print("Hello!")
+
+
+greet_user()
+
+
+# 传递一个参数
+def greet_user(username):
+    """Display a personalized greeting."""
+    print("Hello," + username + "!")
+
+
+greet_user("houjingru")
+
+# 参数的默认值
+
+
+def make_pizza(topping='bacon'):
+    """Make a single-topping pizza."""
+    print("Have a " + topping + " pizza!")
+
+
+make_pizza()
+make_pizza('pepperoni')
+
+
+# 返回值
+
+
+def add_numbers(x, y):
+    """Add two numbers and return the sum."""
+    return x + y
+
+
+sum = add_numbers(3, 5)
+print(sum)
+
+"""
+类
+"""
+
+
+class Dog():
+    """Represent a dog."""
+    def __init__(self, name):
+        """Initialize dog object."""
+        self.name = name
+
+    def sit(self):
+        """Simulate sitting."""
+        print(self.name + " is sitting")
+
+
+my_dog = Dog('Peso')
+print(my_dog.name + " is a great dag !")
+my_dog.sit()
+
+
+# 继承
+class SARDog(Dog):
+    """Represent a search dog."""
+
+    def __init__(self, name):
+        """Initialize the sardog."""
+        super().__init__(name)
+
+    def search(self):
+        """Simulate searching."""
+        print(self.name + " is searching.")
+
+
+my_dog = SARDog('Willie')
+
+print(my_dog.name + " is a search dog.")
+my_dog.sit()
+my_dog.search()
+
+"""
+文件
+"""
+
+# 读文件
+filename = 'siddhartha.txt'
+with open(filename) as file_object:
+    lines = file_object.readlines()
+
+for line in lines:
+    print(line)
+
+# 写文件
+filename = 'journal.txt'
+with open(filename, 'w') as file_object:
+    file_object.write("I love programming.")
+
+# 追加文件
+filename = 'journal.txt'
+with open(filename, 'a') as file_object:
+    file_object.write("\n I Love making games.")
+
+
+prompt = "How many tickets do you need?"
+num_tickets = input(prompt)
+
+try:
+    num_tickets = int(num_tickets)
+except ValueError:
+    print("Please try again.")
+else:
+    print("Your tickets are printing.")
